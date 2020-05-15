@@ -1,0 +1,43 @@
+<h3 style="margin-left: 40%;">
+  Disputes Information
+</h3>
+
+<div style="width:80%;margin-left: 10%;">
+<mat-table [dataSource]="disputes" class="mat-elevation-z8">
+  <ng-container matColumnDef="disputeId">
+    <mat-header-cell *matHeaderCellDef> Dispute Id </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.disputeId}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="clientName">
+    <mat-header-cell *matHeaderCellDef> Client Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.clientName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="disputeType">
+    <mat-header-cell *matHeaderCellDef> Dispute Type </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.disputeType}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="location">
+    <mat-header-cell *matHeaderCellDef> Location(City) </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="severity">
+    <mat-header-cell *matHeaderCellDef> Severity </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.severity}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="selectedRow">
+    <mat-header-cell *matHeaderCellDef> view </mat-header-cell>
+    <mat-cell *matCellDef="let element"> <button (click)="selectedRow(element.disputeId)" style="background-color: Transparent;background-repeat:no-repeat;border: none;cursor:pointer;overflow: hidden;outline:none;"><mat-icon aria-hidden="false" aria-label="Example home icon">remove_red_eye</mat-icon></button> </mat-cell>
+  </ng-container>
+  <a href="#">
+    
+  </a>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>

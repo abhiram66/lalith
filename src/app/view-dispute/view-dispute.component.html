@@ -1,0 +1,65 @@
+<div class="">
+  <div class="col-md-offset-5 col-md-7">
+    <h3 style="font-family: Segoe UI,Arial,sans-serif;margin-left: 43%;">Dispute Details</h3>
+  </div>
+</div>
+
+<form [formGroup]="disputeForm" (ngSubmit)="submitLogin()">
+  <table  id="customers">
+    <tr>
+      <td>Client Name </td>
+      <td><input type="text" formControlName="clientName" class="form-control" disabled=true /><br /></td>
+    </tr>
+    <tr>
+      <td>Dispute Type </td>
+      <td><input type="text" formControlName="disputeType" class="form-control" disabled=true /><br /></td>
+    </tr>
+    <tr>
+      <td>Location </td>
+      <td><input type="text" formControlName="location" class="form-control" disabled=true /><br /></td>
+    </tr>
+    <tr>
+      <td>Severity </td>
+      <td><input type="text" formControlName="severity" class="form-control" disabled=true /><br /></td>
+    </tr>
+    <tr>
+      <td>Description </td>
+      <td><input type="text" formControlName="description" class="form-control" disabled=true /><br /></td>
+    </tr>
+    <tr>
+      <td>Contact Number </td>
+      <td><input type="text" formControlName="contactNo" class="form-control" disabled=true /><br /></td>
+    </tr>
+    <tr>
+      <td>Email Address </td>
+      <td><input type="text" formControlName="email" class="form-control" disabled=true /><br /></td>
+    </tr>
+    <tr>
+      <td>Expected Resolution </td>
+      <td><input type="text" formControlName="expectedResolution" class="form-control" disabled=true /><br />
+      </td>
+    </tr>
+    <tr>
+      <td>Resolution Comments </td>
+      <td><input type="text" formControlName="comments" class="form-control" required=true
+          [ngClass]="{ 'is-invalid': submitted && f.comments.errors }" /> <br/>*Date validation is applied as required field
+        <div *ngIf="submitted && f.comments.errors" class="invalid-feedback">
+          <div *ngIf="f.comments.errors.required" style="color: red;">comments is required</div>
+        </div>
+      </td><br />
+    </tr>
+    <tr>
+      <td>Resolution Person Email </td>
+      <td> <input type="text" formControlName="rEmail" class="form-control" required=true
+          [ngClass]="{ 'is-invalid': submitted && f.rEmail.errors }" /> <br/>
+          *Data validation is required for required and email format
+        <div *ngIf="submitted && f.rEmail.errors" class="invalid-feedback">
+          <div *ngIf="f.rEmail.errors.required" style="color: red;">Resoluion person is required</div>
+          <div *ngIf="f.rEmail.errors.email" style="color: red;">Email must be a valid email address</div>
+        </div><br /></td>
+    </tr>
+    <tr>
+      <td colspan="2 " ><button class="btn btn-primary">  Resolve Dispute</button></td>
+    </tr>
+  </table>
+</form>
