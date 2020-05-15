@@ -54,7 +54,7 @@
           [ngClass]="{ 'is-invalid': submitted && f.rEmail.errors }" /> <br/>
           *Data validation is required for required and email format
         <div *ngIf="submitted && f.rEmail.errors" class="invalid-feedback">
-          <div *ngIf="f.rEmail.errors.required" style="color: red;">Resoluion person is required</div>
+          <div *ngIf="f.rEmail.errors.required" style="color: red;">Resolution person email is required</div>
           <div *ngIf="f.rEmail.errors.email" style="color: red;">Email must be a valid email address</div>
         </div><br /></td>
     </tr>
